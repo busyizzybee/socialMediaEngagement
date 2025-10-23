@@ -161,8 +161,8 @@ body.night-mode {
 /* Night mode toggle button styling */
 #night-mode-toggle {
   position: fixed;
-  top: 80px;
-  right: 20px;
+  top: 58rem;          /* moved down from 80px */
+  right: 30px;         /* moved more to the right from 20px */
   z-index: 9999;
   background: #0077b5;
   color: white;
