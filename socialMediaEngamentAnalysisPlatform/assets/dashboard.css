@@ -1,0 +1,190 @@
+/* About Us page fixes only */
+/* main title styling */
+h2.text-center.text-primary {
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: #2c3e50 !important;
+  margin-top: -.05rem;  /* move up */
+}
+
+/* center and style PROJECT OVERVIEW heading */
+.card .card-body .card-title {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+/* project overview text - constrain width and improve readability */
+.card .card-body .card-text {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+  color: #495057;
+  text-align: justify;
+}
+
+/* team section heading */
+h3.text-center {
+  margin-top: 1.5rem;      /* was 3rem */
+  margin-bottom: 1rem;     /* was 1.5rem */
+  letter-spacing: 0.1rem;
+}
+
+/* profile pictures - make perfectly circular with border */
+.d-flex.justify-content-center img {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  border: 3px solid #007bff;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 6px !important;  /* was 10px / 0 previously */
+}
+
+/* team member name styling */
+.card h5.card-title.text-success {
+  font-weight: 700;
+  margin-top: 0.5rem;   /* was 0.75rem */
+}
+
+/* team member role text */
+.card .card-text, .card .card-text-small {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* frameworks card - center and constrain */
+.card.text-center .card-body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* footer note styling */
+.row:last-child p {
+  color: #6c757d;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* Move Connectly logo up and size it */
+#connectly-logo {
+  margin-top: 1rem !important;  /* changed from -10rem to bring it down */
+  margin-bottom: 2rem;
+  height: 120px !important;
+  width: auto !important;
+  max-width: 120px;
+  display: block;
+}
+
+/* Bring TEAM & DEVELOPMENT closer together and reduce vertical gaps */
+h3.text-center {
+  margin-top: 1.5rem;      /* was 3rem */
+  margin-bottom: 1rem;     /* was 1.5rem */
+  letter-spacing: 0.1rem;
+}
+
+/* Tighten spacing for the two team rows */
+.row.d-flex.justify-content-center {
+  margin-top: 0.6rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Slightly different rule for the lower (mx-auto) row */
+.row.d-flex.justify-content-center.mx-auto {
+  margin-top: -0.9rem !important;  /* negative to bring rows closer */
+  margin-bottom: 1rem !important;
+}
+
+/* Reduce card body vertical padding inside team cards */
+.text-center.h-100 .card-body {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+}
+
+/* Reduce space under profile images and tighten name spacing */
+.d-flex.justify-content-center img {
+  margin-bottom: 6px !important;  /* was 10px / 0 previously */
+}
+
+.card h5.card-title.text-success {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+/* Reduce bottom margin applied by mb-4 for team columns (less aggressive) */
+.mb-4 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* tighten horizontal spacing between team columns */
+.row.d-flex.justify-content-center > .col {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+  background: #1a1a2e !important;
+  color: #eaeaea !important;
+}
+
+.night-mode .navbar {
+  background: #16213e !important;
+}
+
+.night-mode .card {
+  background: #0f3460 !important;
+  color: #eaeaea !important;
+  border-color: #16213e !important;
+}
+
+.night-mode .card .card-body {
+  background: #0f3460 !important;
+  color: #eaeaea !important;
+}
+
+.night-mode h2, .night-mode h3, .night-mode h4, .night-mode h5 {
+  color: #eaeaea !important;
+}
+
+.night-mode .card-text, .night-mode .card-text-small {
+  color: #b8b8b8 !important;
+}
+
+.night-mode a {
+  color: #66d9ef !important;
+}
+
+/* Night mode toggle button styling */
+#night-mode-toggle {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  background: #0077b5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+#night-mode-toggle:hover {
+  transform: scale(1.1);
+  background: #005a8d;
+}
+
+.night-mode #night-mode-toggle {
+  background: #f39c12;
+}
+
+.night-mode #night-mode-toggle:hover {
+  background: #e67e22;
+}
