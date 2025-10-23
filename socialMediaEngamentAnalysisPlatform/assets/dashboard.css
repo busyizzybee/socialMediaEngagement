@@ -125,6 +125,64 @@ h3.text-center {
   padding-right: 8px !important;
 }
 
+/* Center date pickers in LinkedIn and Instagram cards */
+.card-body .DateInput,
+.card-body .SingleDatePickerInput {
+  display: inline-block;
+}
+
+/* Center the entire date picker container */
+.card.bg-info .card-body,
+.card[color="info"] .card-body,
+.card[color="thistle"] .card-body,
+div.card[color="thistle"] .card-body {
+  text-align: center !important;
+}
+
+.card.bg-info .card-body h4,
+.card[color="info"] .card-body h4,
+.card[color="thistle"] .card-body h4,
+div.card[color="thistle"] .card-body h4 {
+  text-align: center !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Center the "Filter data" paragraph text for both LinkedIn and Instagram */
+.card.bg-info .card-body p,
+.card[color="info"] .card-body p,
+.card[color="thistle"] .card-body p,
+div.card[color="thistle"] .card-body p,
+.card-body p.card-text {
+  text-align: center !important;
+  margin-bottom: 0.5rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* Center date picker wrapper - more specific */
+.card-body > div[style*="textAlign"],
+.card-body div[style*="center"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+/* Make sure date picker inputs are centered */
+.SingleDatePickerInput {
+  display: inline-flex !important;
+}
+
+/* Force center alignment for both LinkedIn and Instagram date pickers */
+#ig-date-picker-start,
+#ig-date-picker-end,
+#li-date-picker-start,
+#li-date-picker-end {
+  margin: 0 5px !important;
+}
+
 /* Night Mode Styles */
 body.night-mode {
   background: #1a1a2e !important;
@@ -158,11 +216,42 @@ body.night-mode {
   color: #66d9ef !important;
 }
 
+/* Navbar link styling for night mode */
+.night-mode .navbar-nav .nav-link {
+  color: #b8b8b8 !important;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.night-mode .navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Active link with bottom border highlight */
+.night-mode .navbar-nav .nav-link.active,
+.night-mode .navbar-nav .nav-item.active .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.night-mode .navbar-nav .nav-link.active::after,
+.night-mode .navbar-nav .nav-item.active .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #66d9ef;
+  border-radius: 2px 2px 0 0;
+}
+
 /* Night mode toggle button styling */
 #night-mode-toggle {
   position: fixed;
-  top: 58rem;          /* moved down from 80px */
-  right: 30px;         /* moved more to the right from 20px */
+  top: 58rem;
+  right: 30px;
   z-index: 9999;
   background: #0077b5;
   color: white;
