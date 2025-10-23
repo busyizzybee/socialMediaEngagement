@@ -1,168 +1,193 @@
-/* About Us page fixes only */
-/* main title styling */
+:root {
+  /* Light Mode Colors */
+  --primary-blue: #007bff;
+  --dark-blue: #0077b5;
+  --darker-blue: #005a8d;
+  --text-dark: #2c3e50;
+  --text-muted: #6c757d;
+  --text-gray: #495057;
+  --border-light: rgba(0,0,0,0.08);
+  
+  /* Night Mode Colors - Updated for better visibility */
+  --night-bg: #0d1117;
+  --night-navbar: #161b22;
+  --night-card: #1c2128;
+  --night-text: #f0f6fc;
+  --night-text-muted: #8b949e;
+  --night-accent: #58a6ff;
+  --night-warning: #ffa657;
+  --night-warning-hover: #ff8c3a;
+  --night-border: #30363d;
+  
+  /* Spacing */
+  --spacing-xs: 0.35rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+}
+
+/* ============================================
+   ABOUT US PAGE STYLES
+   ============================================ */
+
+/* Main title styling */
 h2.text-center.text-primary {
   font-weight: 700;
   letter-spacing: 0.08rem;
-  color: #2c3e50 !important;
-  margin-top: -.05rem;  /* move up */
+  color: var(--text-dark);
+  margin-top: -0.05rem;
 }
 
-/* center and style PROJECT OVERVIEW heading */
+/* Project overview heading */
 .card .card-body .card-title {
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  margin-bottom: 1rem;
-  margin-top: -1rem;
+  margin-bottom: var(--spacing-md);
+  margin-top: calc(-1 * var(--spacing-md));
 }
 
-/* project overview text - constrain width and improve readability */
+/* Project overview text - constrain width and improve readability */
 .card .card-body .card-text {
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.65;
-  color: #495057;
+  color: var(--text-gray);
   text-align: justify;
 }
 
-/* team section heading */
+/* Team section heading */
 h3.text-center {
-  margin-top: 1.5rem;      /* was 3rem */
-  margin-bottom: 1rem;     /* was 1.5rem */
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   letter-spacing: 0.1rem;
 }
 
-/* profile pictures - make perfectly circular with border */
+/* Profile pictures - perfectly circular with border */
 .d-flex.justify-content-center img {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 50% !important;
-  border: 3px solid #007bff;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-blue);
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-bottom: 6px !important;  /* was 10px / 0 previously */
+  box-shadow: 0 4px 12px var(--border-light);
+  margin-bottom: 6px;
 }
 
-/* team member name styling */
+/* Team member name styling */
 .card h5.card-title.text-success {
   font-weight: 700;
-  margin-top: 0.5rem;   /* was 0.75rem */
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
 }
 
-/* team member role text */
-.card .card-text, .card .card-text-small {
-  color: #6c757d;
+/* Team member role text */
+.card .card-text,
+.card .card-text-small {
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-/* frameworks card - center and constrain */
+/* Frameworks card - center and constrain */
 .card.text-center .card-body {
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* footer note styling */
+/* Footer note styling */
 .row:last-child p {
-  color: #6c757d;
+  color: var(--text-muted);
   font-style: italic;
   margin-top: 2rem;
 }
 
-/* Move Connectly logo up and size it */
+/* Connectly logo sizing and positioning */
 #connectly-logo {
-  margin-top: 1rem !important;  /* changed from -10rem to bring it down */
+  margin-top: var(--spacing-md);
   margin-bottom: 2rem;
-  height: 120px !important;
-  width: auto !important;
+  height: 120px;
+  width: auto;
   max-width: 120px;
   display: block;
 }
 
-/* Bring TEAM & DEVELOPMENT closer together and reduce vertical gaps */
-h3.text-center {
-  margin-top: 1.5rem;      /* was 3rem */
-  margin-bottom: 1rem;     /* was 1.5rem */
-  letter-spacing: 0.1rem;
-}
-
-/* Tighten spacing for the two team rows */
+/* Tighten spacing for team rows */
 .row.d-flex.justify-content-center {
-  margin-top: 0.6rem !important;
-  margin-bottom: 1rem !important;
+  margin-top: 0.6rem;
+  margin-bottom: var(--spacing-md);
 }
 
-/* Slightly different rule for the lower (mx-auto) row */
 .row.d-flex.justify-content-center.mx-auto {
-  margin-top: -0.9rem !important;  /* negative to bring rows closer */
-  margin-bottom: 1rem !important;
+  margin-top: -0.9rem;
+  margin-bottom: var(--spacing-md);
 }
 
 /* Reduce card body vertical padding inside team cards */
 .text-center.h-100 .card-body {
-  padding-top: 0.35rem !important;
-  padding-bottom: 0.35rem !important;
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
-/* Reduce space under profile images and tighten name spacing */
-.d-flex.justify-content-center img {
-  margin-bottom: 6px !important;  /* was 10px / 0 previously */
-}
-
-.card h5.card-title.text-success {
-  margin-top: 0.35rem !important;
-  margin-bottom: 0.35rem !important;
-}
-
-/* Reduce bottom margin applied by mb-4 for team columns (less aggressive) */
+/* Reduce bottom margin for team columns */
 .mb-4 {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: var(--spacing-sm);
 }
 
-/* tighten horizontal spacing between team columns */
+/* Tighten horizontal spacing between team columns */
 .row.d-flex.justify-content-center > .col {
-  padding-left: 8px !important;
-  padding-right: 8px !important;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-/* Center date pickers in LinkedIn and Instagram cards */
+/* ============================================
+   DATE PICKER CENTERING (LINKEDIN & INSTAGRAM)
+   ============================================ */
+
+/* Center date picker inputs */
 .card-body .DateInput,
 .card-body .SingleDatePickerInput {
   display: inline-block;
 }
 
-/* Center the entire date picker container */
+/* Center the entire card body content - more aggressive selectors */
 .card.bg-info .card-body,
 .card[color="info"] .card-body,
 .card[color="thistle"] .card-body,
-div.card[color="thistle"] .card-body {
+div.card[color="thistle"] .card-body,
+.bg-thistle .card-body {
   text-align: center !important;
 }
 
+/* Center headings in filter cards */
 .card.bg-info .card-body h4,
 .card[color="info"] .card-body h4,
 .card[color="thistle"] .card-body h4,
-div.card[color="thistle"] .card-body h4 {
+div.card[color="thistle"] .card-body h4,
+.bg-thistle .card-body h4 {
   text-align: center !important;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm);
 }
 
-/* Center the "Filter data" paragraph text for both LinkedIn and Instagram */
+/* Center the "Filter data" paragraph text - MOST IMPORTANT */
 .card.bg-info .card-body p,
 .card[color="info"] .card-body p,
 .card[color="thistle"] .card-body p,
 div.card[color="thistle"] .card-body p,
+.bg-thistle .card-body p,
 .card-body p.card-text {
   text-align: center !important;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   width: 100% !important;
+  display: block !important;
 }
 
-/* Center date picker wrapper - more specific */
+/* Center date picker wrapper */
 .card-body > div[style*="textAlign"],
-.card-body div[style*="center"] {
+.card-body > div[style*="center"],
+.card-body > div {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -175,7 +200,7 @@ div.card[color="thistle"] .card-body p,
   display: inline-flex !important;
 }
 
-/* Force center alignment for both LinkedIn and Instagram date pickers */
+/* Spacing for individual date pickers */
 #ig-date-picker-start,
 #ig-date-picker-end,
 #li-date-picker-start,
@@ -183,55 +208,121 @@ div.card[color="thistle"] .card-body p,
   margin: 0 5px !important;
 }
 
-/* Night Mode Styles */
+/* Force center for Instagram specifically */
+.card[color="thistle"] p {
+  text-align: center !important;
+}
+
+/* ============================================
+   NIGHT MODE STYLES
+   ============================================ */
+
 body.night-mode {
-  background: #1a1a2e !important;
-  color: #eaeaea !important;
+  background: var(--night-bg) !important;
+  color: var(--night-text) !important;
 }
 
 .night-mode .navbar {
-  background: #16213e !important;
+  background: var(--night-navbar) !important;
 }
 
 .night-mode .card {
-  background: #0f3460 !important;
-  color: #eaeaea !important;
-  border-color: #16213e !important;
+  background: var(--night-card) !important;
+  color: var(--night-text) !important;
+  border-color: var(--night-border) !important;
 }
 
 .night-mode .card .card-body {
-  background: #0f3460 !important;
-  color: #eaeaea !important;
+  background: var(--night-card) !important;
+  color: var(--night-text) !important;
 }
 
-.night-mode h2, .night-mode h3, .night-mode h4, .night-mode h5 {
-  color: #eaeaea !important;
+.night-mode h1,
+.night-mode h2,
+.night-mode h3,
+.night-mode h4,
+.night-mode h5,
+.night-mode h6 {
+  color: var(--night-text) !important;
 }
 
-.night-mode .card-text, .night-mode .card-text-small {
-  color: #b8b8b8 !important;
+/* Fix all paragraph text visibility in night mode */
+.night-mode p,
+.night-mode .card-text,
+.night-mode .card-text-small {
+  color: var(--night-text) !important;
+}
+
+.night-mode .text-muted,
+.night-mode .card .card-text-small {
+  color: var(--night-text-muted) !important;
 }
 
 .night-mode a {
-  color: #66d9ef !important;
+  color: var(--night-accent) !important;
 }
 
-/* Navbar link styling for night mode */
-.night-mode .navbar-nav .nav-link {
-  color: #b8b8b8 !important;
+.night-mode a:hover {
+  color: var(--night-warning) !important;
+}
+
+/* Fix "Filter data by connection date range:" text visibility */
+.night-mode .card.bg-info .card-body p,
+.night-mode .card[color="info"] .card-body p,
+.night-mode .card[color="thistle"] .card-body p {
+  color: var(--night-text) !important;
+}
+
+/* Fix wordcloud description text */
+.night-mode .card .card-body p[style*="italic"] {
+  color: var(--night-text-muted) !important;
+}
+
+/* Night mode card headers with better contrast */
+.night-mode .card-header {
+  background: var(--night-navbar) !important;
+  border-color: var(--night-border) !important;
+}
+
+/* Night mode profile image borders */
+.night-mode .d-flex.justify-content-center img {
+  border-color: var(--night-accent) !important;
+}
+
+/* ============================================
+   NAVBAR LINKS - LIGHT & NIGHT MODE
+   ============================================ */
+
+/* Default navbar link styling */
+.navbar-nav .nav-link {
   transition: all 0.3s ease;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--spacing-sm);
+}
+
+/* Keyboard focus indicator for accessibility */
+.navbar-nav .nav-link:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Night mode navbar links */
+.night-mode .navbar-nav .nav-link {
+  color: var(--night-text-muted) !important;
 }
 
 .night-mode .navbar-nav .nav-link:hover {
-  color: #ffffff !important;
+  color: var(--night-text) !important;
+}
+
+.night-mode .navbar-nav .nav-link:focus {
+  outline-color: var(--night-accent);
 }
 
 /* Active link with bottom border highlight */
 .night-mode .navbar-nav .nav-link.active,
 .night-mode .navbar-nav .nav-item.active .nav-link {
-  color: #ffffff !important;
+  color: var(--night-text) !important;
   font-weight: 500;
 }
 
@@ -243,17 +334,25 @@ body.night-mode {
   left: 0;
   right: 0;
   height: 3px;
-  background: #66d9ef;
+  background: var(--night-accent);
   border-radius: 2px 2px 0 0;
 }
 
-/* Night mode toggle button styling */
+/* Night mode navbar brand */
+.night-mode .navbar-brand {
+  color: var(--night-text) !important;
+}
+
+/* ============================================
+   NIGHT MODE TOGGLE BUTTON
+   ============================================ */
+
 #night-mode-toggle {
   position: fixed;
-  top: 58rem;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   z-index: 9999;
-  background: #0077b5;
+  background: var(--dark-blue);
   color: white;
   border: none;
   border-radius: 50%;
@@ -261,19 +360,52 @@ body.night-mode {
   height: 50px;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 #night-mode-toggle:hover {
   transform: scale(1.1);
-  background: #005a8d;
+  background: var(--darker-blue);
+}
+
+#night-mode-toggle:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
 }
 
 .night-mode #night-mode-toggle {
-  background: #f39c12;
+  background: var(--night-warning);
 }
 
 .night-mode #night-mode-toggle:hover {
-  background: #e67e22;
+  background: var(--night-warning-hover);
+}
+
+.night-mode #night-mode-toggle:focus {
+  outline-color: var(--night-accent);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  #night-mode-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .d-flex.justify-content-center img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .card .card-body .card-text {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 }
