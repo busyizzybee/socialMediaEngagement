@@ -19,11 +19,29 @@
   --night-warning-hover: #ff8c3a;
   --night-border: #30363d;
   
+  /* Landing Page Gradient Colors - MUCH LIGHTER */
+  --landing-gradient-start: #b8c5ff;
+  --landing-gradient-end: #d4b3e8;
+  
   /* Spacing */
   --spacing-xs: 0.35rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
+}
+
+/* ============================================
+   LANDING PAGE STYLES
+   ============================================ */
+
+/* Hero section gradient - much lighter colors */
+.landing-hero-gradient {
+  background: linear-gradient(135deg, var(--landing-gradient-start) 0%, var(--landing-gradient-end) 100%) !important;
+}
+
+/* Call to action gradient - much lighter colors */
+.landing-cta-gradient {
+  background: linear-gradient(135deg, var(--landing-gradient-start) 0%, var(--landing-gradient-end) 100%) !important;
 }
 
 /* ============================================
@@ -287,6 +305,12 @@ body.night-mode {
 /* Night mode profile image borders */
 .night-mode .d-flex.justify-content-center img {
   border-color: var(--night-accent) !important;
+}
+
+/* Night mode landing page gradients - softer in dark mode */
+.night-mode .landing-hero-gradient,
+.night-mode .landing-cta-gradient {
+  background: linear-gradient(135deg, #6b7acf 0%, #9b7ab9 100%) !important;
 }
 
 /* ============================================
