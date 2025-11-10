@@ -415,21 +415,117 @@ body.night-mode {
    ============================================ */
 
 @media (max-width: 768px) {
-  #night-mode-toggle {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-    bottom: 15px;
-    right: 15px;
+  :root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.35rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
   }
-  
+
+  /* Make cards stack and take full width */
+  .container-fluid, .dbc-container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .row > .col, .row > [class*="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  /* Date pickers: stack vertically on smaller widths for touch */
+  .card-body > div[style*="textAlign"], 
+  .card-body > div[style*="center"],
+  .card-body > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+
+  .SingleDatePickerInput, .DateInput {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Reduce hero image + profile images */
   .d-flex.justify-content-center img {
     width: 100px;
     height: 100px;
   }
-  
-  .card .card-body .card-text {
+
+  #connectly-logo {
+    height: 100px;
+    margin-top: 0.5rem;
+  }
+
+  /* Wordcloud / small placeholder figure sizing */
+  .card .card-body .plotly, /* Plotly container */
+  .card .card-body img,
+  .card .card-body canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Night mode toggle smaller and reachable */
+  #night-mode-toggle {
+    width: 45px;
+    height: 45px;
+    bottom: 14px;
+    right: 14px;
+  }
+
+  /* Navbar links slightly smaller to avoid wrap */
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+  }
+}
+
+/* Extra-tight rules for phones */
+@media (max-width: 480px) {
+  :root {
+    --spacing-xs: 0.2rem;
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.5rem;
+    --spacing-lg: 0.75rem;
+  }
+
+  /* Make cards and columns single-column */
+  .row > .col, .row > [class*="col-"] {
+    flex: 0 0 100%;
     max-width: 100%;
-    padding: 0 1rem;
+  }
+
+  /* Reduce text sizes for tight screens */
+  h1.display-3 { font-size: 1.6rem; }
+  .card h4 { font-size: 1.05rem; }
+  .card p { font-size: 0.95rem; }
+
+  /* Ensure date pickers & CTA buttons remain tappable */
+  .card-body .SingleDatePickerInput, .card-body .DateInput, .card .btn {
+    min-height: 42px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Smaller profile images */
+  .d-flex.justify-content-center img {
+    width: 88px;
+    height: 88px;
+  }
+
+  /* Night toggle: smaller still */
+  #night-mode-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 12px;
+    right: 12px;
+    font-size: 1.1rem;
   }
 }
